@@ -12,6 +12,7 @@ http://maven.apache.org/maven-v4_0_0.xsd"
     <name>TP1 Dylan Mastrolia</name>
     <url>http://univ-avignon.fr </url>
     <build>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
