@@ -15,10 +15,10 @@ public class IPokedexTest {
 
     @Test
     public void testAddPokemon() throws Exception{
-        Pokemon pokemon = new Pokemon(1,"Pika",100,120,200,5,40,20,30,43.00);
-        Mockito.when(pokedex.addPokemon(pokemon)).thenReturn(1);
+        Pokemon pokemon = new Pokemon(0,"Bulbizarre",126,126,90,613,64,4000,4,0.56);
+        Mockito.when(pokedex.addPokemon(pokemon)).thenReturn(0);
         int result = pokedex.addPokemon(pokemon);
-        assertEquals(result,1);
+        assertEquals(result,0);
         Mockito.verify(pokedex).addPokemon(pokemon);
 
 
@@ -26,11 +26,11 @@ public class IPokedexTest {
 
     @Test
     public void testGetPokemon() throws Exception{
-        Pokemon pokemon = new Pokemon(1,"Pika",100,120,200,5,40,20,30,43.00);
-        Mockito.when(pokedex.getPokemon(1)).thenReturn(pokemon);
-        Pokemon result = pokedex.getPokemon(1);
+        Pokemon pokemon = new Pokemon(0,"Bulbizarre",126,126,90,613,64,4000,4,0.56);
+        Mockito.when(pokedex.getPokemon(0)).thenReturn(pokemon);
+        Pokemon result = pokedex.getPokemon(0);
         assertNotNull(result);
         assertEquals(pokemon,result);
-        Mockito.verify(pokedex).getPokemon(1);
+        Mockito.verify(pokedex).getPokemon(0);
     }
 }

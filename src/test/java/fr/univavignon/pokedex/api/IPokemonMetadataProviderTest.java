@@ -16,11 +16,15 @@ public class IPokemonMetadataProviderTest {
 
     @Test
     public void testGetPokemonMetadata() throws Exception{
-        PokemonMetadata metadata = new PokemonMetadata(1, "Pika", 120, 120, 100);
-        Mockito.when(provider.getPokemonMetadata(1)).thenReturn(metadata);
-        PokemonMetadata result = provider.getPokemonMetadata(1);
+        PokemonMetadata metadata = new PokemonMetadata(0, "Bulbizarre", 126, 126, 90);
+        Mockito.when(provider.getPokemonMetadata(0)).thenReturn(metadata);
+        PokemonMetadata result = provider.getPokemonMetadata(0);
         assertNotNull(result);
-        assertEquals("Pika", result.getName());
+        assertEquals("Bulbizarre", result.getName());
+        assertEquals(0,result.getIndex());
+        assertEquals(126,result.getAttack());
+        assertEquals(126,result.getDefense());
+        assertEquals(90,result.getStamina());
 
     }
 
