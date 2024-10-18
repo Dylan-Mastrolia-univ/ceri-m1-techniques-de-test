@@ -10,8 +10,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Build Job
-          command: echo "this is the build job test"
+          name: Clean le projet
+          command: mvn clean install
 
 
   test:
@@ -19,7 +19,6 @@ jobs:
       - image: cimg/openjdk:11.0
     steps:
       - checkout
-      - run: mvn clean install
       - run:
           name: Test Job
           command: mvn test
