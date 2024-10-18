@@ -12,7 +12,7 @@ jobs:
       - run:
           name: Build Job
           command: echo "this is the build job test"
-      - codecov/upload
+
 
   test:
     docker:
@@ -23,6 +23,7 @@ jobs:
       - run:
           name: Test Job
           command: mvn test
+      - codecov/upload
 
 workflows:
   version: 2
