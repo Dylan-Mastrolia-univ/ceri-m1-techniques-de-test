@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: Build Job
-          command: echo "this is the build job"
+          command: echo "this is the build job test"
 
   test:
     docker:
