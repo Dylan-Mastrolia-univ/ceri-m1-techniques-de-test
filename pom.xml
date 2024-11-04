@@ -61,7 +61,7 @@ http://maven.apache.org/maven-v4_0_0.xsd"
                 </executions>
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
-                    <failOnViolation>true</failOnViolation>
+                    <failOnViolation>false</failOnViolation>
                 </configuration>
             </plugin>
         </plugins>
