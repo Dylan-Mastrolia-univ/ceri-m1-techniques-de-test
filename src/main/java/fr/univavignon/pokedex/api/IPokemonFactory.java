@@ -1,4 +1,5 @@
 package fr.univavignon.pokedex.api;
+import java.util.ArrayList;
 /**
  * Factory interface for class that aims to create Pokemon instance.
  * 
