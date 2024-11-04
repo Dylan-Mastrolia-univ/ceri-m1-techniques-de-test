@@ -1,0 +1,24 @@
+name: Checkstyle
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  checkstyle:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: ''
+
+      - name: Build with Maven and run Checkstyle
+        run: mvn checkstyle:check
