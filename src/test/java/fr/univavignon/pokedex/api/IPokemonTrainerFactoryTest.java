@@ -1,36 +1,26 @@
 package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 
 public class IPokemonTrainerFactoryTest {
 
     private IPokemonTrainerFactory factory;
     private IPokedexFactory pokedexFactory;
-    private IPokedex pokedex;
-
 
     @Before
     public void init(){
-        factory = Mockito.mock(IPokemonTrainerFactory.class);
-        pokedexFactory = Mockito.mock(IPokedexFactory.class);
-        pokedex = Mockito.mock(IPokedex.class);
-
+        factory = new PokemonTrainerFactory();
+        pokedexFactory = new PokedexFactory();
     }
 
     @Test
     public void testCreatePokemonTrainer() throws Exception{
-        PokemonTrainer trainer = new PokemonTrainer("TheTrain",Team.INSTINCT,pokedex);
-        Mockito.when(pokedexFactory.createPokedex(Mockito.any(), Mockito.any())).thenReturn(pokedex);
-        Mockito.when(factory.createTrainer("TheTrain",Team.INSTINCT,pokedexFactory)).thenReturn(trainer);
-        PokemonTrainer result = factory.createTrainer("TheTrain",Team.INSTINCT,pokedexFactory);
-        assertNotNull(result);
-        assertEquals("TheTrain", result.getName());
-        assertEquals(Team.INSTINCT, result.getTeam());
-        assertEquals(pokedex, result.getPokedex());
-        Mockito.verify(factory).createTrainer("TheTrain",Team.INSTINCT,pokedexFactory);
+        PokemonTrainer trainer = factory.createTrainer("TheTrain", Team.INSTINCT, pokedexFactory);
+        assertNotNull(trainer);
+        assertEquals("TheTrain", trainer.getName());
+        assertEquals(Team.INSTINCT, trainer.getTeam());
+        assertNotNull(trainer.getPokedex());
     }
 }

@@ -12,7 +12,7 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 
     public PokemonMetadataProvider() {
         metadataMap = new HashMap<>();
-        loadMetadataFromCSV("pokemon_metadata.csv");
+        loadMetadataFromCSV("src/main/java/fr/univavignon/pokedex/api/pokemon_metadata.csv");
     }
 
     private void loadMetadataFromCSV(String filePath) {
