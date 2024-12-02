@@ -30,4 +30,16 @@ public class IPokemonFactoryTest {
 
         assertTrue(pokemon.getIv() >= 0 && pokemon.getIv() <= 100);
     }
+
+    @Test
+    public void testRandomStatsRange() {
+        for (int i = 0; i < 1000; i++) {
+            Pokemon pokemon = factory.createPokemon(0, 500, 50, 2000, 2);
+
+            assertTrue(pokemon.getAttack() >= 126 && pokemon.getAttack() <= 141);
+            assertTrue( pokemon.getDefense() >= 126 && pokemon.getDefense() <= 141);
+            assertTrue( pokemon.getStamina() >= 90 && pokemon.getStamina() <= 105);
+            assertTrue( pokemon.getIv() >= 0 && pokemon.getIv() <= 100);
+        }
+    }
 }
