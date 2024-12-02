@@ -51,4 +51,5 @@ public class RocketPokemonFactory implements IPokemonFactory {
 /* Rapport
  * Les valeurs attack, defense, stamina et iv
  * Ne généraient pas des valeurs correctes
+ * Ajout de test pour couvrir le script RocketPokemonFactory.java à 100%
  */
