@@ -16,14 +16,9 @@ public class RocketPokemonFactory implements IPokemonFactory {
 		index2name = Collections.unmodifiableMap(aMap);
 	}
 
-	private static int generateRandomStat() {
-		int total = 0;
-		for (int i = 0; i < 1000000; i++) {
-			Random rn = new Random();
-			int r = rn.nextInt(2);
-			total = total + r;
-		}
-		return total / 10000;
+	private static int generateRandomStat(int min, int max) {
+		Random rn = new Random();
+		return rn.nextInt((max - min) + 1) + min;
 	}
 
 	@Override
@@ -44,11 +39,16 @@ public class RocketPokemonFactory implements IPokemonFactory {
 			stamina = 1000;
 			iv = 0;
 		} else {
-			attack = RocketPokemonFactory.generateRandomStat();
-			defense = RocketPokemonFactory.generateRandomStat();
-			stamina = RocketPokemonFactory.generateRandomStat();
-			iv = 1;
+			attack = generateRandomStat(126, 141);
+			defense = generateRandomStat(126, 141);
+			stamina = generateRandomStat(90, 105);
+			iv = new Random().nextDouble() * 100;
 		}
 		return new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, iv);
 	}
 }
+
+/* Rapport
+ * Les valeurs attack, defense, stamina et iv
+ * Ne généraient pas des valeurs correctes
+ */

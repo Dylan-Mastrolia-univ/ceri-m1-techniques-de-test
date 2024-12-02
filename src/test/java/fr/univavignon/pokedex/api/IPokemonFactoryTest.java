@@ -10,7 +10,7 @@ public class IPokemonFactoryTest {
 
     @Before
     public void init(){
-        factory = new PokemonFactory();
+        factory = new RocketPokemonFactory();
     }
 
     @Test
